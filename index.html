@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>R Generator Password</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>R Production</h1>
+        <p class="description">Buat password masih pake tanggal lahir?</p>
+        <h3>Pake ini aja!</h3>
+      </header>
+
+      <div class="settings">
+        <div class="setting-group">
+          <label for="length">Panjang Password: <span class="length-value" id="lengthValue">12</span></label>
+          <div class="length-control">
+            <input type="range" id="length" min="4" max="32" value="12" />
+          </div>
+        </div>
+
+        <div class="setting-group">
+          <label>Jenis Karakter:</label>
+          <div class="checkbox-group">
+            <div class="checkbox-item">
+              <input type="checkbox" id="uppercase" checked />
+              <label for="uppercase">Huruf Besar (A-Z)</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="lowercase" checked />
+              <label for="lowercase">Huruf Kecil (a-z)</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="numbers" checked />
+              <label for="numbers">Angka (0-9)</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="symbols" />
+              <label for="symbols">Simbol (!@#$%^&*)</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="setting-group">
+          <label for="customChars">Karakter Kustom (opsional):</label>
+          <input type="text" id="customChars" placeholder="Masukkan karakter khusus yang diinginkan" />
+          <small class="hint">Karakter di sini akan ditambahkan ke pilihan karakter</small>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="generate-btn" id="generateBtn">Generate Password</button>
+        <button class="copy-btn" id="copyBtn">Salin Password</button>
+      </div>
+
+      <div class="result">
+        <div class="password-display" id="passwordDisplay">Klik tombol "Generate Password"</div>
+        <div class="strength-meter">
+          <div class="strength-fill" id="strengthFill"></div>
+        </div>
+        <div class="strength-text" id="strengthText">Kekuatan: -</div>
+      </div>
+
+      <div class="history">
+        <h3>Riwayat Password</h3>
+        <div class="history-controls">
+          <button class="clear-history-btn" id="clearHistoryBtn">Hapus Riwayat</button>
+          <span class="history-count">Jumlah: <span id="historyCount">0</span></span>
+        </div>
+        <div class="history-list" id="historyList">
+          <!-- Riwayat password akan ditampilkan di sini -->
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>R production &copy; 2025 - bikin password masih pakai tanggal lahir 🤭</p>
+    </footer>
+
+    <div class="toast" id="toast">Password berhasil disalin!</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
